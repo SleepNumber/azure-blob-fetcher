@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test:data:format": "jest format",
-    "test:data:recent": "jest recency",
-    "test:integration": "jest **/integration/*.test.js"
+    "test:data:format": "jest ./__tests__/data/format",
+    "test:data:recent": "jest ./__tests__/data/recency",
+    "test:integration": "jest ./__tests__/integration"
   },
   "keywords": [],
   "author": "",
