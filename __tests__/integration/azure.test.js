@@ -12,7 +12,7 @@ const {
   getBlobItem,
   getBlockBlobClient,
   getBlobContent,
-} = require("./helpers");
+} = require("../../helpers");
 
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
