@@ -79,9 +79,6 @@ describe("Validating results", () => {
     try {
       const fileData = JSON.parse(fileBuffer);
       expect(fileData.length).toBeGreaterThan(1);
-      expect(fileData.map((row) => row.state_code).sort()).toEqual(
-        EXPECTED_STATES.sort()
-      );
     } catch (error) {
       throw error;
     }
@@ -93,6 +90,9 @@ describe("Validating results", () => {
       const fileData = JSON.parse(fileBuffer);
       // Do we need 50 states + total?
       expect(fileData.length).toBeGreaterThan(50);
+      expect(fileData.map((row) => row.state_code).sort()).toEqual(
+        EXPECTED_STATES.sort()
+      );
     } catch (error) {
       throw error;
     }
