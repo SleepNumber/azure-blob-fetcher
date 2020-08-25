@@ -1,3 +1,7 @@
+require("dotenv").config();
+
+const outputPath = process.env.OUTPUT_TEST_RESULTS;
+
 module.exports = {
   verbose: false,
   reporters: [
@@ -8,6 +12,7 @@ module.exports = {
         includeFailureMsg: true,
         includeConsoleLog: true,
         append: true,
+        outputPath,
       },
     ],
   ],
