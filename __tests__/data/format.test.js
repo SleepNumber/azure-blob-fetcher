@@ -60,7 +60,16 @@ const EXPECTED_STATES = [
   "WY",
 ];
 
-describe("Validating results", () => {
+describe("Data Validation", () => {
+  let fileBuffer;
+  beforeAll(async () => {
+    fileBuffer = await fs.readFile(OUTPUT_FILENAME);
+  });
+
+  afterAll(() => {
+    console.info(JSON.parse(fileBuffer, null, 2));
+  });
+
   test("The file exists", async () => {
     const fileStats = await fs.stat(OUTPUT_FILENAME);
     expect(fileStats).toBeTruthy();
@@ -73,76 +82,54 @@ describe("Validating results", () => {
       createdDate.getTime()
     );
   });
-  test("The file is valid JSON and able to be parsed", async () => {
-    const fileBuffer = await fs.readFile(OUTPUT_FILENAME);
 
-    try {
-      const fileData = JSON.parse(fileBuffer);
-      expect(fileData.length).toBeGreaterThan(1);
-    } catch (error) {
-      throw error;
-    }
+  test("The file is valid JSON and able to be parsed", async () => {
+    const fileData = JSON.parse(fileBuffer);
+    expect(fileData.length).toBeGreaterThan(1);
   });
 
   test("The JSON includes all 50 states, DC, and TOTAL US", async () => {
-    try {
-      const fileBuffer = await fs.readFile(OUTPUT_FILENAME);
-      const fileData = JSON.parse(fileBuffer);
-      // Do we need 50 states + total?
-      expect(fileData.length).toBeGreaterThan(50);
-      expect(fileData.map((row) => row.state_code).sort()).toEqual(
-        EXPECTED_STATES.sort()
-      );
-    } catch (error) {
-      throw error;
-    }
+    const fileData = JSON.parse(fileBuffer);
+    expect(fileData.map((row) => row.state_code).sort()).toEqual(
+      EXPECTED_STATES.sort()
+    );
   });
 
   test("Each row contains the expected properties", async () => {
-    const fileBuffer = await fs.readFile(OUTPUT_FILENAME);
-    try {
-      const fileData = JSON.parse(fileBuffer);
-      fileData.forEach((row) => {
-        expect(row).toMatchObject({
-          state_code: expect.any(String),
-          last_sleep_date: expect.any(String),
-          sleep_iq: expect.any(String),
-          restful_time: expect.any(String),
-          sleep_number: expect.any(String),
-          heartrate: expect.any(String),
-          breathrate: expect.any(String),
-          bedtime: expect.any(String),
-          waketime: expect.any(String),
-          pc_difft_sleepnumber: expect.any(String),
-          snap_date: expect.any(String),
-        });
+    const fileData = JSON.parse(fileBuffer);
+    fileData.forEach((row) => {
+      expect(row).toMatchObject({
+        state_code: expect.any(String),
+        last_sleep_date: expect.any(String),
+        sleep_iq: expect.any(String),
+        restful_time: expect.any(String),
+        sleep_number: expect.any(String),
+        heartrate: expect.any(String),
+        breathrate: expect.any(String),
+        bedtime: expect.any(String),
+        waketime: expect.any(String),
+        pc_difft_sleepnumber: expect.any(String),
+        snap_date: expect.any(String),
       });
-    } catch (error) {
-      throw error;
-    }
+    });
   });
 
   test("Each row is in its expected format", async () => {
-    const fileBuffer = await fs.readFile(OUTPUT_FILENAME);
-    try {
-      const fileData = JSON.parse(fileBuffer);
-      fileData.forEach((row) => {
-        expect(row).toMatchObject({
-          state_code: expect.stringMatching(/(\w\w$|TOTAL\sUS$)/),
-          last_sleep_date: expect.stringMatching(/\d\d\d\d-\d\d-\d\d$/),
-          sleep_iq: expect.stringMatching(/\d*\.\d*$/),
-          restful_time: expect.stringMatching(/\d\d?h\s\d\d?m$/),
-          sleep_number: expect.stringMatching(/\d[05]$/),
-          heartrate: expect.stringMatching(/\d*\.\d*$/),
-          breathrate: expect.stringMatching(/\d*\.\d*$/),
-          bedtime: expect.stringMatching(/\d\d?:\d\d\s[AP]M$/),
-          waketime: expect.stringMatching(/\d\d?:\d\d\s[AP]M$/),
-          pc_difft_sleepnumber: expect.stringMatching(/\d\d?$/),
-          snap_date: expect.stringMatching(/\d\d\d\d-\d\d-\d\d$/),
-        });
+    const fileData = JSON.parse(fileBuffer);
+    fileData.forEach((row) => {
+      expect(row).toMatchObject({
+        state_code: expect.stringMatching(/(\w\w$|TOTAL\sUS$)/),
+        last_sleep_date: expect.stringMatching(/\d\d\d\d-\d\d-\d\d$/),
+        sleep_iq: expect.stringMatching(/\d*\.\d*$/),
+        restful_time: expect.stringMatching(/\d\d?h\s\d\d?m$/),
+        sleep_number: expect.stringMatching(/\d[05]$/),
+        heartrate: expect.stringMatching(/\d*\.\d*$/),
+        breathrate: expect.stringMatching(/\d*\.\d*$/),
+        bedtime: expect.stringMatching(/\d\d?:\d\d\s[AP]M$/),
+        waketime: expect.stringMatching(/\d\d?:\d\d\s[AP]M$/),
+        pc_difft_sleepnumber: expect.stringMatching(/\d\d?$/),
+        snap_date: expect.stringMatching(/\d\d\d\d-\d\d-\d\d$/),
       });
-    } catch (error) {
-      throw error;
-    }
+    });
   });
 });

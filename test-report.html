@@ -1,0 +1,2888 @@
+<html><head><meta charset="utf-8"/><title>Test Report</title><style type="text/css">html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+body {
+  padding: 2rem 1rem;
+  font-size: 0.85rem;
+}
+#jesthtml-content {
+  margin: 0 auto;
+  max-width: 70rem;
+}
+header {
+  display: flex;
+  align-items: center;
+}
+#title {
+  margin: 0;
+  flex-grow: 1;
+}
+#logo {
+  height: 4rem;
+}
+#timestamp {
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/** SUMMARY */
+#summary {
+  color: #333;
+  margin: 2rem 0;
+  display: flex;
+  font-family: monospace;
+  font-size: 1rem;
+}
+#summary > div {
+  margin-right: 2rem;
+  background: #eee;
+  padding: 1rem;
+  min-width: 15rem;
+}
+#summary > div:last-child {
+  margin-right: 0;
+}
+@media only screen and (max-width: 720px) {
+  #summary {
+    flex-direction: column;
+  }
+  #summary > div {
+    margin-right: 0;
+    margin-top: 2rem;
+  }
+  #summary > div:first-child {
+    margin-top: 0;
+  }
+}
+
+.summary-total {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.summary-passed {
+  color: #4f8a10;
+  border-left: 0.4rem solid #4f8a10;
+  padding-left: 0.5rem;
+}
+.summary-failed {
+  color: #d8000c;
+  border-left: 0.4rem solid #d8000c;
+  padding-left: 0.5rem;
+}
+.summary-pending {
+  color: #9f6000;
+  border-left: 0.4rem solid #9f6000;
+  padding-left: 0.5rem;
+}
+.summary-empty {
+  color: #999;
+  border-left: 0.4rem solid #999;
+}
+
+.test-result {
+  padding: 1rem;
+  margin-bottom: 0.25rem;
+}
+.test-result:last-child {
+  border: 0;
+}
+.test-result.passed {
+  background-color: #dff2bf;
+  color: #4f8a10;
+}
+.test-result.failed {
+  background-color: #ffbaba;
+  color: #d8000c;
+}
+.test-result.pending {
+  background-color: #ffdf61;
+  color: #9f6000;
+}
+
+.test-info {
+  display: flex;
+  justify-content: space-between;
+}
+.test-suitename {
+  width: 20%;
+  text-align: left;
+  font-weight: bold;
+  word-break: break-word;
+}
+.test-title {
+  width: 40%;
+  text-align: left;
+  font-style: italic;
+}
+.test-status {
+  width: 20%;
+  text-align: right;
+}
+.test-duration {
+  width: 10%;
+  text-align: right;
+  font-size: 0.75rem;
+}
+
+.failureMessages {
+  padding: 0 1rem;
+  margin-top: 1rem;
+  border-top: 1px dashed #d8000c;
+}
+.failureMsg {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+.suite-container {
+  margin-bottom: 2rem;
+}
+.suite-info {
+  padding: 1rem;
+  background-color: #eee;
+  color: #777;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+.suite-info .suite-path {
+  word-break: break-all;
+  flex-grow: 1;
+  font-family: monospace;
+  font-size: 1rem;
+}
+.suite-info .suite-time {
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.3rem;
+  font-size: 0.75rem;
+}
+.suite-info .suite-time.warn {
+  background-color: #d8000c;
+  color: #fff;
+}
+
+/* CONSOLE LOGS */
+.suite-consolelog {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #efefef;
+}
+.suite-consolelog-header {
+  font-weight: bold;
+}
+.suite-consolelog-item {
+  padding: 0.5rem;
+}
+.suite-consolelog-item pre {
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+.suite-consolelog-item-origin {
+  color: #777;
+  font-weight: bold;
+}
+.suite-consolelog-item-message {
+  color: #000;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+</style></head><body><div id="jesthtml-content"><header><h1 id="title">Test Report</h1></header><div id="metadata-container"><div id="timestamp">Started: 2020-08-24 21:43:58</div><div id="summary"><div id="suite-summary"><div class="summary-total">Suites (1)</div><div class="summary-passed summary-empty">0 passed</div><div class="summary-failed">1 failed</div><div class="summary-pending summary-empty">0 pending</div></div><div id="test-summary"><div class="summary-total">Tests (6)</div><div class="summary-passed">5 passed</div><div class="summary-failed">1 failed</div><div class="summary-pending summary-empty">0 pending</div></div></div></div><div id="suite-1" class="suite-container"><div class="suite-info"><div class="suite-path">/home/montgx/dev/ply/azure-blob-fetcher/__tests__/data/format.test.js</div><div class="suite-time">0.343s</div></div><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Validate file stats, format and recency of data</div><div class="test-title">The file exists</div><div class="test-status">passed</div><div class="test-duration">0.002s</div></div></div><div class="test-result failed"><div class="test-info"><div class="test-suitename">Validate file stats, format and recency of data</div><div class="test-title">The file was created within defined threshold</div><div class="test-status">failed</div><div class="test-duration">0.001s</div></div><div class="failureMessages"> <pre class="failureMsg">Error: expect(received).toBeLessThan(expected)
+
+Expected: &lt; 1597862828199
+Received:   1598316239201
+    at Object.&lt;anonymous&gt; (/home/montgx/dev/ply/azure-blob-fetcher/__tests__/data/format.test.js:77:46)</pre></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Validate file stats, format and recency of data</div><div class="test-title">The file is valid JSON and able to be parsed</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Validate file stats, format and recency of data</div><div class="test-title">The JSON includes all 50 states, DC, and TOTAL US</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Validate file stats, format and recency of data</div><div class="test-title">Each row contains the expected properties</div><div class="test-status">passed</div><div class="test-duration">0.008s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Validate file stats, format and recency of data</div><div class="test-title">Each row is in its expected format</div><div class="test-status">passed</div><div class="test-duration">0.005s</div></div></div></div></div></div><html><head><meta charset="utf-8"/><title>Test Report</title><style type="text/css">html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+body {
+  padding: 2rem 1rem;
+  font-size: 0.85rem;
+}
+#jesthtml-content {
+  margin: 0 auto;
+  max-width: 70rem;
+}
+header {
+  display: flex;
+  align-items: center;
+}
+#title {
+  margin: 0;
+  flex-grow: 1;
+}
+#logo {
+  height: 4rem;
+}
+#timestamp {
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/** SUMMARY */
+#summary {
+  color: #333;
+  margin: 2rem 0;
+  display: flex;
+  font-family: monospace;
+  font-size: 1rem;
+}
+#summary > div {
+  margin-right: 2rem;
+  background: #eee;
+  padding: 1rem;
+  min-width: 15rem;
+}
+#summary > div:last-child {
+  margin-right: 0;
+}
+@media only screen and (max-width: 720px) {
+  #summary {
+    flex-direction: column;
+  }
+  #summary > div {
+    margin-right: 0;
+    margin-top: 2rem;
+  }
+  #summary > div:first-child {
+    margin-top: 0;
+  }
+}
+
+.summary-total {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.summary-passed {
+  color: #4f8a10;
+  border-left: 0.4rem solid #4f8a10;
+  padding-left: 0.5rem;
+}
+.summary-failed {
+  color: #d8000c;
+  border-left: 0.4rem solid #d8000c;
+  padding-left: 0.5rem;
+}
+.summary-pending {
+  color: #9f6000;
+  border-left: 0.4rem solid #9f6000;
+  padding-left: 0.5rem;
+}
+.summary-empty {
+  color: #999;
+  border-left: 0.4rem solid #999;
+}
+
+.test-result {
+  padding: 1rem;
+  margin-bottom: 0.25rem;
+}
+.test-result:last-child {
+  border: 0;
+}
+.test-result.passed {
+  background-color: #dff2bf;
+  color: #4f8a10;
+}
+.test-result.failed {
+  background-color: #ffbaba;
+  color: #d8000c;
+}
+.test-result.pending {
+  background-color: #ffdf61;
+  color: #9f6000;
+}
+
+.test-info {
+  display: flex;
+  justify-content: space-between;
+}
+.test-suitename {
+  width: 20%;
+  text-align: left;
+  font-weight: bold;
+  word-break: break-word;
+}
+.test-title {
+  width: 40%;
+  text-align: left;
+  font-style: italic;
+}
+.test-status {
+  width: 20%;
+  text-align: right;
+}
+.test-duration {
+  width: 10%;
+  text-align: right;
+  font-size: 0.75rem;
+}
+
+.failureMessages {
+  padding: 0 1rem;
+  margin-top: 1rem;
+  border-top: 1px dashed #d8000c;
+}
+.failureMsg {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+.suite-container {
+  margin-bottom: 2rem;
+}
+.suite-info {
+  padding: 1rem;
+  background-color: #eee;
+  color: #777;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+.suite-info .suite-path {
+  word-break: break-all;
+  flex-grow: 1;
+  font-family: monospace;
+  font-size: 1rem;
+}
+.suite-info .suite-time {
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.3rem;
+  font-size: 0.75rem;
+}
+.suite-info .suite-time.warn {
+  background-color: #d8000c;
+  color: #fff;
+}
+
+/* CONSOLE LOGS */
+.suite-consolelog {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #efefef;
+}
+.suite-consolelog-header {
+  font-weight: bold;
+}
+.suite-consolelog-item {
+  padding: 0.5rem;
+}
+.suite-consolelog-item pre {
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+.suite-consolelog-item-origin {
+  color: #777;
+  font-weight: bold;
+}
+.suite-consolelog-item-message {
+  color: #000;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+</style></head><body><div id="jesthtml-content"><header><h1 id="title">Test Report</h1></header><div id="metadata-container"><div id="timestamp">Started: 2020-08-24 21:49:48</div><div id="summary"><div id="suite-summary"><div class="summary-total">Suites (1)</div><div class="summary-passed summary-empty">0 passed</div><div class="summary-failed">1 failed</div><div class="summary-pending summary-empty">0 pending</div></div><div id="test-summary"><div class="summary-total">Tests (6)</div><div class="summary-passed">5 passed</div><div class="summary-failed">1 failed</div><div class="summary-pending summary-empty">0 pending</div></div></div></div><div id="suite-1" class="suite-container"><div class="suite-info"><div class="suite-path">/home/montgx/dev/ply/azure-blob-fetcher/__tests__/data/format.test.js</div><div class="suite-time">0.339s</div></div><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">The file exists</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result failed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">The file was created within defined threshold</div><div class="test-status">failed</div><div class="test-duration">0.001s</div></div><div class="failureMessages"> <pre class="failureMsg">Error: expect(received).toBeLessThan(expected)
+
+Expected: &lt; 1597862828199
+Received:   1598316589275
+    at Object.&lt;anonymous&gt; (/home/montgx/dev/ply/azure-blob-fetcher/__tests__/data/format.test.js:81:46)</pre></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">The file is valid JSON and able to be parsed</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">The JSON includes all 50 states, DC, and TOTAL US</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">Each row contains the expected properties</div><div class="test-status">passed</div><div class="test-duration">0.006s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">Each row is in its expected format</div><div class="test-status">passed</div><div class="test-duration">0.007s</div></div></div></div><div class="suite-consolelog"><div class="suite-consolelog-header">Console Log</div><div class="suite-consolelog-item"><pre class="suite-consolelog-item-origin">    at Object.&lt;anonymous&gt; (/home/montgx/dev/ply/azure-blob-fetcher/__tests__/data/format.test.js:70:13)
+    at Object.asyncJestLifecycle (/home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:58:37)
+    at /home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at Object.fn (/home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/treeProcessor.js:43:7)</pre><pre class="suite-consolelog-item-message">[
+  {
+    state_code: 'TN',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.1',
+    restful_time: '6h 35m',
+    sleep_number: '35',
+    heartrate: '62.33',
+    breathrate: '15.41',
+    bedtime: '10:27 PM',
+    waketime: '6:58 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'WY',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.86',
+    restful_time: '6h 36m',
+    sleep_number: '35',
+    heartrate: '61.79',
+    breathrate: '15.71',
+    bedtime: '10:02 PM',
+    waketime: '6:35 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NM',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.57',
+    restful_time: '6h 43m',
+    sleep_number: '35',
+    heartrate: '61.33',
+    breathrate: '15.53',
+    bedtime: '9:59 PM',
+    waketime: '6:38 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'AK',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.4',
+    restful_time: '6h 40m',
+    sleep_number: '40',
+    heartrate: '62.28',
+    breathrate: '15.49',
+    bedtime: '10:34 PM',
+    waketime: '7:18 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'AZ',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.81',
+    restful_time: '6h 38m',
+    sleep_number: '35',
+    heartrate: '61.48',
+    breathrate: '15.4',
+    bedtime: '10:19 PM',
+    waketime: '6:53 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MS',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.86',
+    restful_time: '6h 36m',
+    sleep_number: '35',
+    heartrate: '62.63',
+    breathrate: '15.43',
+    bedtime: '10:17 PM',
+    waketime: '6:50 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'WA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.68',
+    restful_time: '6h 40m',
+    sleep_number: '35',
+    heartrate: '61.97',
+    breathrate: '15.41',
+    bedtime: '10:21 PM',
+    waketime: '7:03 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'TOTAL US',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.02',
+    restful_time: '6h 36m',
+    sleep_number: '35',
+    heartrate: '61.81',
+    breathrate: '15.4',
+    bedtime: '10:32 PM',
+    waketime: '7:06 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'ME',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.9',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '61.38',
+    breathrate: '15.33',
+    bedtime: '10:12 PM',
+    waketime: '6:46 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'CT',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.31',
+    restful_time: '6h 38m',
+    sleep_number: '45',
+    heartrate: '61.29',
+    breathrate: '15.3',
+    bedtime: '10:36 PM',
+    waketime: '7:09 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NC',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.27',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '62.1',
+    breathrate: '15.34',
+    bedtime: '10:42 PM',
+    waketime: '7:13 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'SC',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.9',
+    restful_time: '6h 35m',
+    sleep_number: '35',
+    heartrate: '62.08',
+    breathrate: '15.35',
+    bedtime: '10:44 PM',
+    waketime: '7:15 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'AR',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.02',
+    restful_time: '6h 37m',
+    sleep_number: '35',
+    heartrate: '62.14',
+    breathrate: '15.39',
+    bedtime: '10:21 PM',
+    waketime: '6:58 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'ID',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.31',
+    restful_time: '6h 42m',
+    sleep_number: '40',
+    heartrate: '61.88',
+    breathrate: '15.44',
+    bedtime: '10:10 PM',
+    waketime: '6:50 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'CO',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '74.44',
+    restful_time: '6h 45m',
+    sleep_number: '35',
+    heartrate: '61.43',
+    breathrate: '15.56',
+    bedtime: '10:04 PM',
+    waketime: '6:44 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'KS',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.24',
+    restful_time: '6h 34m',
+    sleep_number: '35',
+    heartrate: '61.73',
+    breathrate: '15.34',
+    bedtime: '10:30 PM',
+    waketime: '7:00 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'KY',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.94',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '62.25',
+    breathrate: '15.4',
+    bedtime: '10:48 PM',
+    waketime: '7:20 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'TX',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.08',
+    restful_time: '6h 37m',
+    sleep_number: '35',
+    heartrate: '62.08',
+    breathrate: '15.35',
+    bedtime: '10:33 PM',
+    waketime: '7:10 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'AL',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.89',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '62.58',
+    breathrate: '15.37',
+    bedtime: '10:19 PM',
+    waketime: '6:52 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'HI',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '70.96',
+    restful_time: '6h 26m',
+    sleep_number: '35',
+    heartrate: '61.25',
+    breathrate: '15.32',
+    bedtime: '10:15 PM',
+    waketime: '6:48 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'IL',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.19',
+    restful_time: '6h 34m',
+    sleep_number: '45',
+    heartrate: '61.81',
+    breathrate: '15.4',
+    bedtime: '10:26 PM',
+    waketime: '6:58 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'OH',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.06',
+    restful_time: '6h 31m',
+    sleep_number: '35',
+    heartrate: '61.88',
+    breathrate: '15.44',
+    bedtime: '10:46 PM',
+    waketime: '7:13 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'ND',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.09',
+    restful_time: '6h 32m',
+    sleep_number: '35',
+    heartrate: '62.18',
+    breathrate: '15.48',
+    bedtime: '10:26 PM',
+    waketime: '6:55 AM',
+    pc_difft_sleepnumber: '78',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NV',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.77',
+    restful_time: '6h 40m',
+    sleep_number: '35',
+    heartrate: '61.67',
+    breathrate: '15.51',
+    bedtime: '10:09 PM',
+    waketime: '6:48 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'UT',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.56',
+    restful_time: '6h 41m',
+    sleep_number: '35',
+    heartrate: '61.44',
+    breathrate: '15.59',
+    bedtime: '10:17 PM',
+    waketime: '7:00 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'OR',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.8',
+    restful_time: '6h 40m',
+    sleep_number: '35',
+    heartrate: '61.8',
+    breathrate: '15.37',
+    bedtime: '10:20 PM',
+    waketime: '7:02 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'DE',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.24',
+    restful_time: '6h 37m',
+    sleep_number: '45',
+    heartrate: '62.04',
+    breathrate: '15.4',
+    bedtime: '10:46 PM',
+    waketime: '7:19 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'VT',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.97',
+    restful_time: '6h 35m',
+    sleep_number: '40',
+    heartrate: '60.82',
+    breathrate: '15.31',
+    bedtime: '10:20 PM',
+    waketime: '6:54 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NH',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.23',
+    restful_time: '6h 37m',
+    sleep_number: '45',
+    heartrate: '61.61',
+    breathrate: '15.41',
+    bedtime: '10:25 PM',
+    waketime: '6:57 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NJ',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.84',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '61.71',
+    breathrate: '15.42',
+    bedtime: '10:53 PM',
+    waketime: '7:27 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'RI',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.85',
+    restful_time: '6h 37m',
+    sleep_number: '45',
+    heartrate: '61.16',
+    breathrate: '15.17',
+    bedtime: '10:37 PM',
+    waketime: '7:10 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MI',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.63',
+    restful_time: '6h 30m',
+    sleep_number: '40',
+    heartrate: '61.72',
+    breathrate: '15.4',
+    bedtime: '10:50 PM',
+    waketime: '7:16 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NY',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.6',
+    restful_time: '6h 33m',
+    sleep_number: '35',
+    heartrate: '61.59',
+    breathrate: '15.43',
+    bedtime: '10:49 PM',
+    waketime: '7:22 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'SD',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.37',
+    restful_time: '6h 33m',
+    sleep_number: '35',
+    heartrate: '61.6',
+    breathrate: '15.48',
+    bedtime: '10:11 PM',
+    waketime: '6:39 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'CA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.46',
+    restful_time: '6h 39m',
+    sleep_number: '35',
+    heartrate: '61.46',
+    breathrate: '15.38',
+    bedtime: '10:25 PM',
+    waketime: '7:08 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'IA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.2',
+    restful_time: '6h 31m',
+    sleep_number: '35',
+    heartrate: '61.61',
+    breathrate: '15.4',
+    bedtime: '10:19 PM',
+    waketime: '6:45 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'FL',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.91',
+    restful_time: '6h 37m',
+    sleep_number: '35',
+    heartrate: '61.82',
+    breathrate: '15.35',
+    bedtime: '10:45 PM',
+    waketime: '7:20 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'WI',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.18',
+    restful_time: '6h 32m',
+    sleep_number: '45',
+    heartrate: '61.5',
+    breathrate: '15.37',
+    bedtime: '10:16 PM',
+    waketime: '6:43 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MT',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.02',
+    restful_time: '6h 40m',
+    sleep_number: '35',
+    heartrate: '61.86',
+    breathrate: '15.53',
+    bedtime: '10:08 PM',
+    waketime: '6:46 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'GA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.04',
+    restful_time: '6h 33m',
+    sleep_number: '35',
+    heartrate: '62.21',
+    breathrate: '15.39',
+    bedtime: '10:46 PM',
+    waketime: '7:16 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.13',
+    restful_time: '6h 37m',
+    sleep_number: '35',
+    heartrate: '61.5',
+    breathrate: '15.34',
+    bedtime: '10:42 PM',
+    waketime: '7:17 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'IN',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.8',
+    restful_time: '6h 29m',
+    sleep_number: '35',
+    heartrate: '62.05',
+    breathrate: '15.4',
+    bedtime: '10:37 PM',
+    waketime: '7:01 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MN',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.89',
+    restful_time: '6h 38m',
+    sleep_number: '35',
+    heartrate: '61.4',
+    breathrate: '15.37',
+    bedtime: '10:26 PM',
+    waketime: '7:01 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NE',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.05',
+    restful_time: '6h 27m',
+    sleep_number: '35',
+    heartrate: '61.76',
+    breathrate: '15.47',
+    bedtime: '10:25 PM',
+    waketime: '6:46 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'PA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.35',
+    restful_time: '6h 32m',
+    sleep_number: '35',
+    heartrate: '61.62',
+    breathrate: '15.43',
+    bedtime: '10:41 PM',
+    waketime: '7:09 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'VA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.35',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '62.1',
+    breathrate: '15.35',
+    bedtime: '10:46 PM',
+    waketime: '7:17 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'LA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.8',
+    restful_time: '6h 37m',
+    sleep_number: '45',
+    heartrate: '62.41',
+    breathrate: '15.41',
+    bedtime: '10:18 PM',
+    waketime: '6:56 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'OK',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.72',
+    restful_time: '6h 34m',
+    sleep_number: '35',
+    heartrate: '61.95',
+    breathrate: '15.38',
+    bedtime: '10:31 PM',
+    waketime: '7:03 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'DC',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.6',
+    restful_time: '6h 37m',
+    sleep_number: '45',
+    heartrate: '61.38',
+    breathrate: '15.33',
+    bedtime: '11:13 PM',
+    waketime: '7:54 AM',
+    pc_difft_sleepnumber: '77',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MD',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.66',
+    restful_time: '6h 34m',
+    sleep_number: '45',
+    heartrate: '61.99',
+    breathrate: '15.4',
+    bedtime: '10:50 PM',
+    waketime: '7:23 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MO',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.96',
+    restful_time: '6h 35m',
+    sleep_number: '35',
+    heartrate: '62.02',
+    breathrate: '15.36',
+    bedtime: '10:28 PM',
+    waketime: '7:00 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'WV',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.01',
+    restful_time: '6h 30m',
+    sleep_number: '35',
+    heartrate: '62.35',
+    breathrate: '15.53',
+    bedtime: '10:44 PM',
+    waketime: '7:13 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  }
+]</pre></div></div></div></div><html><head><meta charset="utf-8"/><title>Test Report</title><style type="text/css">html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+body {
+  padding: 2rem 1rem;
+  font-size: 0.85rem;
+}
+#jesthtml-content {
+  margin: 0 auto;
+  max-width: 70rem;
+}
+header {
+  display: flex;
+  align-items: center;
+}
+#title {
+  margin: 0;
+  flex-grow: 1;
+}
+#logo {
+  height: 4rem;
+}
+#timestamp {
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/** SUMMARY */
+#summary {
+  color: #333;
+  margin: 2rem 0;
+  display: flex;
+  font-family: monospace;
+  font-size: 1rem;
+}
+#summary > div {
+  margin-right: 2rem;
+  background: #eee;
+  padding: 1rem;
+  min-width: 15rem;
+}
+#summary > div:last-child {
+  margin-right: 0;
+}
+@media only screen and (max-width: 720px) {
+  #summary {
+    flex-direction: column;
+  }
+  #summary > div {
+    margin-right: 0;
+    margin-top: 2rem;
+  }
+  #summary > div:first-child {
+    margin-top: 0;
+  }
+}
+
+.summary-total {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.summary-passed {
+  color: #4f8a10;
+  border-left: 0.4rem solid #4f8a10;
+  padding-left: 0.5rem;
+}
+.summary-failed {
+  color: #d8000c;
+  border-left: 0.4rem solid #d8000c;
+  padding-left: 0.5rem;
+}
+.summary-pending {
+  color: #9f6000;
+  border-left: 0.4rem solid #9f6000;
+  padding-left: 0.5rem;
+}
+.summary-empty {
+  color: #999;
+  border-left: 0.4rem solid #999;
+}
+
+.test-result {
+  padding: 1rem;
+  margin-bottom: 0.25rem;
+}
+.test-result:last-child {
+  border: 0;
+}
+.test-result.passed {
+  background-color: #dff2bf;
+  color: #4f8a10;
+}
+.test-result.failed {
+  background-color: #ffbaba;
+  color: #d8000c;
+}
+.test-result.pending {
+  background-color: #ffdf61;
+  color: #9f6000;
+}
+
+.test-info {
+  display: flex;
+  justify-content: space-between;
+}
+.test-suitename {
+  width: 20%;
+  text-align: left;
+  font-weight: bold;
+  word-break: break-word;
+}
+.test-title {
+  width: 40%;
+  text-align: left;
+  font-style: italic;
+}
+.test-status {
+  width: 20%;
+  text-align: right;
+}
+.test-duration {
+  width: 10%;
+  text-align: right;
+  font-size: 0.75rem;
+}
+
+.failureMessages {
+  padding: 0 1rem;
+  margin-top: 1rem;
+  border-top: 1px dashed #d8000c;
+}
+.failureMsg {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+.suite-container {
+  margin-bottom: 2rem;
+}
+.suite-info {
+  padding: 1rem;
+  background-color: #eee;
+  color: #777;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+.suite-info .suite-path {
+  word-break: break-all;
+  flex-grow: 1;
+  font-family: monospace;
+  font-size: 1rem;
+}
+.suite-info .suite-time {
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.3rem;
+  font-size: 0.75rem;
+}
+.suite-info .suite-time.warn {
+  background-color: #d8000c;
+  color: #fff;
+}
+
+/* CONSOLE LOGS */
+.suite-consolelog {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #efefef;
+}
+.suite-consolelog-header {
+  font-weight: bold;
+}
+.suite-consolelog-item {
+  padding: 0.5rem;
+}
+.suite-consolelog-item pre {
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+.suite-consolelog-item-origin {
+  color: #777;
+  font-weight: bold;
+}
+.suite-consolelog-item-message {
+  color: #000;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+</style></head><body><div id="jesthtml-content"><header><h1 id="title">Test Report</h1></header><div id="metadata-container"><div id="timestamp">Started: 2020-08-24 21:50:31</div><div id="summary"><div id="suite-summary"><div class="summary-total">Suites (1)</div><div class="summary-passed summary-empty">0 passed</div><div class="summary-failed">1 failed</div><div class="summary-pending summary-empty">0 pending</div></div><div id="test-summary"><div class="summary-total">Tests (6)</div><div class="summary-passed">5 passed</div><div class="summary-failed">1 failed</div><div class="summary-pending summary-empty">0 pending</div></div></div></div><div id="suite-1" class="suite-container"><div class="suite-info"><div class="suite-path">/home/montgx/dev/ply/azure-blob-fetcher/__tests__/data/format.test.js</div><div class="suite-time">0.358s</div></div><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">The file exists</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result failed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">The file was created within defined threshold</div><div class="test-status">failed</div><div class="test-duration">0.002s</div></div><div class="failureMessages"> <pre class="failureMsg">Error: expect(received).toBeLessThan(expected)
+
+Expected: &lt; 1597862828199
+Received:   1598316632140
+    at Object.&lt;anonymous&gt; (/home/montgx/dev/ply/azure-blob-fetcher/__tests__/data/format.test.js:81:46)</pre></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">The file is valid JSON and able to be parsed</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">The JSON includes all 50 states, DC, and TOTAL US</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">Each row contains the expected properties</div><div class="test-status">passed</div><div class="test-duration">0.007s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">Each row is in its expected format</div><div class="test-status">passed</div><div class="test-duration">0.007s</div></div></div></div><div class="suite-consolelog"><div class="suite-consolelog-header">Console Log</div><div class="suite-consolelog-item"><pre class="suite-consolelog-item-origin">    at Object.&lt;anonymous&gt; (/home/montgx/dev/ply/azure-blob-fetcher/__tests__/data/format.test.js:70:13)
+    at Object.asyncJestLifecycle (/home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:58:37)
+    at /home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at Object.fn (/home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/treeProcessor.js:43:7)</pre><pre class="suite-consolelog-item-message">[
+  {
+    state_code: 'TN',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.1',
+    restful_time: '6h 35m',
+    sleep_number: '35',
+    heartrate: '62.33',
+    breathrate: '15.41',
+    bedtime: '10:27 PM',
+    waketime: '6:58 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'WY',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.86',
+    restful_time: '6h 36m',
+    sleep_number: '35',
+    heartrate: '61.79',
+    breathrate: '15.71',
+    bedtime: '10:02 PM',
+    waketime: '6:35 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NM',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.57',
+    restful_time: '6h 43m',
+    sleep_number: '35',
+    heartrate: '61.33',
+    breathrate: '15.53',
+    bedtime: '9:59 PM',
+    waketime: '6:38 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'AK',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.4',
+    restful_time: '6h 40m',
+    sleep_number: '40',
+    heartrate: '62.28',
+    breathrate: '15.49',
+    bedtime: '10:34 PM',
+    waketime: '7:18 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'AZ',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.81',
+    restful_time: '6h 38m',
+    sleep_number: '35',
+    heartrate: '61.48',
+    breathrate: '15.4',
+    bedtime: '10:19 PM',
+    waketime: '6:53 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MS',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.86',
+    restful_time: '6h 36m',
+    sleep_number: '35',
+    heartrate: '62.63',
+    breathrate: '15.43',
+    bedtime: '10:17 PM',
+    waketime: '6:50 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'WA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.68',
+    restful_time: '6h 40m',
+    sleep_number: '35',
+    heartrate: '61.97',
+    breathrate: '15.41',
+    bedtime: '10:21 PM',
+    waketime: '7:03 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'TOTAL US',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.02',
+    restful_time: '6h 36m',
+    sleep_number: '35',
+    heartrate: '61.81',
+    breathrate: '15.4',
+    bedtime: '10:32 PM',
+    waketime: '7:06 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'ME',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.9',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '61.38',
+    breathrate: '15.33',
+    bedtime: '10:12 PM',
+    waketime: '6:46 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'CT',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.31',
+    restful_time: '6h 38m',
+    sleep_number: '45',
+    heartrate: '61.29',
+    breathrate: '15.3',
+    bedtime: '10:36 PM',
+    waketime: '7:09 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NC',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.27',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '62.1',
+    breathrate: '15.34',
+    bedtime: '10:42 PM',
+    waketime: '7:13 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'SC',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.9',
+    restful_time: '6h 35m',
+    sleep_number: '35',
+    heartrate: '62.08',
+    breathrate: '15.35',
+    bedtime: '10:44 PM',
+    waketime: '7:15 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'AR',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.02',
+    restful_time: '6h 37m',
+    sleep_number: '35',
+    heartrate: '62.14',
+    breathrate: '15.39',
+    bedtime: '10:21 PM',
+    waketime: '6:58 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'ID',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.31',
+    restful_time: '6h 42m',
+    sleep_number: '40',
+    heartrate: '61.88',
+    breathrate: '15.44',
+    bedtime: '10:10 PM',
+    waketime: '6:50 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'CO',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '74.44',
+    restful_time: '6h 45m',
+    sleep_number: '35',
+    heartrate: '61.43',
+    breathrate: '15.56',
+    bedtime: '10:04 PM',
+    waketime: '6:44 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'KS',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.24',
+    restful_time: '6h 34m',
+    sleep_number: '35',
+    heartrate: '61.73',
+    breathrate: '15.34',
+    bedtime: '10:30 PM',
+    waketime: '7:00 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'KY',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.94',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '62.25',
+    breathrate: '15.4',
+    bedtime: '10:48 PM',
+    waketime: '7:20 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'TX',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.08',
+    restful_time: '6h 37m',
+    sleep_number: '35',
+    heartrate: '62.08',
+    breathrate: '15.35',
+    bedtime: '10:33 PM',
+    waketime: '7:10 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'AL',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.89',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '62.58',
+    breathrate: '15.37',
+    bedtime: '10:19 PM',
+    waketime: '6:52 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'HI',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '70.96',
+    restful_time: '6h 26m',
+    sleep_number: '35',
+    heartrate: '61.25',
+    breathrate: '15.32',
+    bedtime: '10:15 PM',
+    waketime: '6:48 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'IL',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.19',
+    restful_time: '6h 34m',
+    sleep_number: '45',
+    heartrate: '61.81',
+    breathrate: '15.4',
+    bedtime: '10:26 PM',
+    waketime: '6:58 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'OH',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.06',
+    restful_time: '6h 31m',
+    sleep_number: '35',
+    heartrate: '61.88',
+    breathrate: '15.44',
+    bedtime: '10:46 PM',
+    waketime: '7:13 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'ND',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.09',
+    restful_time: '6h 32m',
+    sleep_number: '35',
+    heartrate: '62.18',
+    breathrate: '15.48',
+    bedtime: '10:26 PM',
+    waketime: '6:55 AM',
+    pc_difft_sleepnumber: '78',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NV',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.77',
+    restful_time: '6h 40m',
+    sleep_number: '35',
+    heartrate: '61.67',
+    breathrate: '15.51',
+    bedtime: '10:09 PM',
+    waketime: '6:48 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'UT',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.56',
+    restful_time: '6h 41m',
+    sleep_number: '35',
+    heartrate: '61.44',
+    breathrate: '15.59',
+    bedtime: '10:17 PM',
+    waketime: '7:00 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'OR',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.8',
+    restful_time: '6h 40m',
+    sleep_number: '35',
+    heartrate: '61.8',
+    breathrate: '15.37',
+    bedtime: '10:20 PM',
+    waketime: '7:02 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'DE',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.24',
+    restful_time: '6h 37m',
+    sleep_number: '45',
+    heartrate: '62.04',
+    breathrate: '15.4',
+    bedtime: '10:46 PM',
+    waketime: '7:19 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'VT',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.97',
+    restful_time: '6h 35m',
+    sleep_number: '40',
+    heartrate: '60.82',
+    breathrate: '15.31',
+    bedtime: '10:20 PM',
+    waketime: '6:54 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NH',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.23',
+    restful_time: '6h 37m',
+    sleep_number: '45',
+    heartrate: '61.61',
+    breathrate: '15.41',
+    bedtime: '10:25 PM',
+    waketime: '6:57 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NJ',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.84',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '61.71',
+    breathrate: '15.42',
+    bedtime: '10:53 PM',
+    waketime: '7:27 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'RI',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.85',
+    restful_time: '6h 37m',
+    sleep_number: '45',
+    heartrate: '61.16',
+    breathrate: '15.17',
+    bedtime: '10:37 PM',
+    waketime: '7:10 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MI',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.63',
+    restful_time: '6h 30m',
+    sleep_number: '40',
+    heartrate: '61.72',
+    breathrate: '15.4',
+    bedtime: '10:50 PM',
+    waketime: '7:16 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NY',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.6',
+    restful_time: '6h 33m',
+    sleep_number: '35',
+    heartrate: '61.59',
+    breathrate: '15.43',
+    bedtime: '10:49 PM',
+    waketime: '7:22 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'SD',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.37',
+    restful_time: '6h 33m',
+    sleep_number: '35',
+    heartrate: '61.6',
+    breathrate: '15.48',
+    bedtime: '10:11 PM',
+    waketime: '6:39 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'CA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.46',
+    restful_time: '6h 39m',
+    sleep_number: '35',
+    heartrate: '61.46',
+    breathrate: '15.38',
+    bedtime: '10:25 PM',
+    waketime: '7:08 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'IA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.2',
+    restful_time: '6h 31m',
+    sleep_number: '35',
+    heartrate: '61.61',
+    breathrate: '15.4',
+    bedtime: '10:19 PM',
+    waketime: '6:45 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'FL',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.91',
+    restful_time: '6h 37m',
+    sleep_number: '35',
+    heartrate: '61.82',
+    breathrate: '15.35',
+    bedtime: '10:45 PM',
+    waketime: '7:20 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'WI',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.18',
+    restful_time: '6h 32m',
+    sleep_number: '45',
+    heartrate: '61.5',
+    breathrate: '15.37',
+    bedtime: '10:16 PM',
+    waketime: '6:43 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MT',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.02',
+    restful_time: '6h 40m',
+    sleep_number: '35',
+    heartrate: '61.86',
+    breathrate: '15.53',
+    bedtime: '10:08 PM',
+    waketime: '6:46 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'GA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.04',
+    restful_time: '6h 33m',
+    sleep_number: '35',
+    heartrate: '62.21',
+    breathrate: '15.39',
+    bedtime: '10:46 PM',
+    waketime: '7:16 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.13',
+    restful_time: '6h 37m',
+    sleep_number: '35',
+    heartrate: '61.5',
+    breathrate: '15.34',
+    bedtime: '10:42 PM',
+    waketime: '7:17 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'IN',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.8',
+    restful_time: '6h 29m',
+    sleep_number: '35',
+    heartrate: '62.05',
+    breathrate: '15.4',
+    bedtime: '10:37 PM',
+    waketime: '7:01 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MN',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.89',
+    restful_time: '6h 38m',
+    sleep_number: '35',
+    heartrate: '61.4',
+    breathrate: '15.37',
+    bedtime: '10:26 PM',
+    waketime: '7:01 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NE',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.05',
+    restful_time: '6h 27m',
+    sleep_number: '35',
+    heartrate: '61.76',
+    breathrate: '15.47',
+    bedtime: '10:25 PM',
+    waketime: '6:46 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'PA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.35',
+    restful_time: '6h 32m',
+    sleep_number: '35',
+    heartrate: '61.62',
+    breathrate: '15.43',
+    bedtime: '10:41 PM',
+    waketime: '7:09 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'VA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.35',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '62.1',
+    breathrate: '15.35',
+    bedtime: '10:46 PM',
+    waketime: '7:17 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'LA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.8',
+    restful_time: '6h 37m',
+    sleep_number: '45',
+    heartrate: '62.41',
+    breathrate: '15.41',
+    bedtime: '10:18 PM',
+    waketime: '6:56 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'OK',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.72',
+    restful_time: '6h 34m',
+    sleep_number: '35',
+    heartrate: '61.95',
+    breathrate: '15.38',
+    bedtime: '10:31 PM',
+    waketime: '7:03 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'DC',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.6',
+    restful_time: '6h 37m',
+    sleep_number: '45',
+    heartrate: '61.38',
+    breathrate: '15.33',
+    bedtime: '11:13 PM',
+    waketime: '7:54 AM',
+    pc_difft_sleepnumber: '77',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MD',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.66',
+    restful_time: '6h 34m',
+    sleep_number: '45',
+    heartrate: '61.99',
+    breathrate: '15.4',
+    bedtime: '10:50 PM',
+    waketime: '7:23 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MO',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.96',
+    restful_time: '6h 35m',
+    sleep_number: '35',
+    heartrate: '62.02',
+    breathrate: '15.36',
+    bedtime: '10:28 PM',
+    waketime: '7:00 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'WV',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.01',
+    restful_time: '6h 30m',
+    sleep_number: '35',
+    heartrate: '62.35',
+    breathrate: '15.53',
+    bedtime: '10:44 PM',
+    waketime: '7:13 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  }
+]</pre></div></div></div></div><html><head><meta charset="utf-8"/><title>Test Report</title><style type="text/css">html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+body {
+  padding: 2rem 1rem;
+  font-size: 0.85rem;
+}
+#jesthtml-content {
+  margin: 0 auto;
+  max-width: 70rem;
+}
+header {
+  display: flex;
+  align-items: center;
+}
+#title {
+  margin: 0;
+  flex-grow: 1;
+}
+#logo {
+  height: 4rem;
+}
+#timestamp {
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/** SUMMARY */
+#summary {
+  color: #333;
+  margin: 2rem 0;
+  display: flex;
+  font-family: monospace;
+  font-size: 1rem;
+}
+#summary > div {
+  margin-right: 2rem;
+  background: #eee;
+  padding: 1rem;
+  min-width: 15rem;
+}
+#summary > div:last-child {
+  margin-right: 0;
+}
+@media only screen and (max-width: 720px) {
+  #summary {
+    flex-direction: column;
+  }
+  #summary > div {
+    margin-right: 0;
+    margin-top: 2rem;
+  }
+  #summary > div:first-child {
+    margin-top: 0;
+  }
+}
+
+.summary-total {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.summary-passed {
+  color: #4f8a10;
+  border-left: 0.4rem solid #4f8a10;
+  padding-left: 0.5rem;
+}
+.summary-failed {
+  color: #d8000c;
+  border-left: 0.4rem solid #d8000c;
+  padding-left: 0.5rem;
+}
+.summary-pending {
+  color: #9f6000;
+  border-left: 0.4rem solid #9f6000;
+  padding-left: 0.5rem;
+}
+.summary-empty {
+  color: #999;
+  border-left: 0.4rem solid #999;
+}
+
+.test-result {
+  padding: 1rem;
+  margin-bottom: 0.25rem;
+}
+.test-result:last-child {
+  border: 0;
+}
+.test-result.passed {
+  background-color: #dff2bf;
+  color: #4f8a10;
+}
+.test-result.failed {
+  background-color: #ffbaba;
+  color: #d8000c;
+}
+.test-result.pending {
+  background-color: #ffdf61;
+  color: #9f6000;
+}
+
+.test-info {
+  display: flex;
+  justify-content: space-between;
+}
+.test-suitename {
+  width: 20%;
+  text-align: left;
+  font-weight: bold;
+  word-break: break-word;
+}
+.test-title {
+  width: 40%;
+  text-align: left;
+  font-style: italic;
+}
+.test-status {
+  width: 20%;
+  text-align: right;
+}
+.test-duration {
+  width: 10%;
+  text-align: right;
+  font-size: 0.75rem;
+}
+
+.failureMessages {
+  padding: 0 1rem;
+  margin-top: 1rem;
+  border-top: 1px dashed #d8000c;
+}
+.failureMsg {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+.suite-container {
+  margin-bottom: 2rem;
+}
+.suite-info {
+  padding: 1rem;
+  background-color: #eee;
+  color: #777;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+.suite-info .suite-path {
+  word-break: break-all;
+  flex-grow: 1;
+  font-family: monospace;
+  font-size: 1rem;
+}
+.suite-info .suite-time {
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.3rem;
+  font-size: 0.75rem;
+}
+.suite-info .suite-time.warn {
+  background-color: #d8000c;
+  color: #fff;
+}
+
+/* CONSOLE LOGS */
+.suite-consolelog {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #efefef;
+}
+.suite-consolelog-header {
+  font-weight: bold;
+}
+.suite-consolelog-item {
+  padding: 0.5rem;
+}
+.suite-consolelog-item pre {
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+.suite-consolelog-item-origin {
+  color: #777;
+  font-weight: bold;
+}
+.suite-consolelog-item-message {
+  color: #000;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+</style></head><body><div id="jesthtml-content"><header><h1 id="title">Test Report</h1></header><div id="metadata-container"><div id="timestamp">Started: 2020-08-25 12:48:40</div><div id="summary"><div id="suite-summary"><div class="summary-total">Suites (1)</div><div class="summary-passed summary-empty">0 passed</div><div class="summary-failed">1 failed</div><div class="summary-pending summary-empty">0 pending</div></div><div id="test-summary"><div class="summary-total">Tests (6)</div><div class="summary-passed">4 passed</div><div class="summary-failed">2 failed</div><div class="summary-pending summary-empty">0 pending</div></div></div></div><div id="suite-1" class="suite-container"><div class="suite-info"><div class="suite-path">/home/montgx/dev/ply/azure-blob-fetcher/__tests__/data/format.test.js</div><div class="suite-time">0.372s</div></div><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">The file exists</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result failed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">The file was created within defined threshold</div><div class="test-status">failed</div><div class="test-duration">0.001s</div></div><div class="failureMessages"> <pre class="failureMsg">Error: expect(received).toBeLessThan(expected)
+
+Expected: &lt; 1597862828199
+Received:   1598370521639
+    at Object.&lt;anonymous&gt; (/home/montgx/dev/ply/azure-blob-fetcher/__tests__/data/format.test.js:81:46)</pre></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">The file is valid JSON and able to be parsed</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result failed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">The JSON includes all 50 states, DC, and TOTAL US</div><div class="test-status">failed</div><div class="test-duration">0.003s</div></div><div class="failureMessages"> <pre class="failureMsg">Error: expect(received).toEqual(expected) // deep equality
+
+- Expected  - 0
++ Received  + 1
+
+@@ -42,10 +42,11 @@
+    "SC",
+    "SD",
+    "TN",
+    "TOTAL US",
+    "TX",
++   "UT",
+    "VA",
+    "VT",
+    "WA",
+    "WI",
+    "WV",
+    at Object.&lt;anonymous&gt; (/home/montgx/dev/ply/azure-blob-fetcher/__tests__/data/format.test.js:93:58)
+    at Object.asyncJestTest (/home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/queueRunner.js:75:41</pre></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">Each row contains the expected properties</div><div class="test-status">passed</div><div class="test-duration">0.008s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Data Validation</div><div class="test-title">Each row is in its expected format</div><div class="test-status">passed</div><div class="test-duration">0.01s</div></div></div></div><div class="suite-consolelog"><div class="suite-consolelog-header">Console Log</div><div class="suite-consolelog-item"><pre class="suite-consolelog-item-origin">    at Object.&lt;anonymous&gt; (/home/montgx/dev/ply/azure-blob-fetcher/__tests__/data/format.test.js:70:13)
+    at Object.asyncJestLifecycle (/home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:58:37)
+    at /home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at Object.fn (/home/montgx/dev/ply/azure-blob-fetcher/node_modules/jest-jasmine2/build/treeProcessor.js:43:7)</pre><pre class="suite-consolelog-item-message">[
+  {
+    state_code: 'TN',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.1',
+    restful_time: '6h 35m',
+    sleep_number: '35',
+    heartrate: '62.33',
+    breathrate: '15.41',
+    bedtime: '10:27 PM',
+    waketime: '6:58 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'WY',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.86',
+    restful_time: '6h 36m',
+    sleep_number: '35',
+    heartrate: '61.79',
+    breathrate: '15.71',
+    bedtime: '10:02 PM',
+    waketime: '6:35 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NM',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.57',
+    restful_time: '6h 43m',
+    sleep_number: '35',
+    heartrate: '61.33',
+    breathrate: '15.53',
+    bedtime: '9:59 PM',
+    waketime: '6:38 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'AK',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.4',
+    restful_time: '6h 40m',
+    sleep_number: '40',
+    heartrate: '62.28',
+    breathrate: '15.49',
+    bedtime: '10:34 PM',
+    waketime: '7:18 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'AZ',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.81',
+    restful_time: '6h 38m',
+    sleep_number: '35',
+    heartrate: '61.48',
+    breathrate: '15.4',
+    bedtime: '10:19 PM',
+    waketime: '6:53 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MS',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.86',
+    restful_time: '6h 36m',
+    sleep_number: '35',
+    heartrate: '62.63',
+    breathrate: '15.43',
+    bedtime: '10:17 PM',
+    waketime: '6:50 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'WA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.68',
+    restful_time: '6h 40m',
+    sleep_number: '35',
+    heartrate: '61.97',
+    breathrate: '15.41',
+    bedtime: '10:21 PM',
+    waketime: '7:03 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'TOTAL US',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.02',
+    restful_time: '6h 36m',
+    sleep_number: '35',
+    heartrate: '61.81',
+    breathrate: '15.4',
+    bedtime: '10:32 PM',
+    waketime: '7:06 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'ME',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.9',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '61.38',
+    breathrate: '15.33',
+    bedtime: '10:12 PM',
+    waketime: '6:46 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'CT',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.31',
+    restful_time: '6h 38m',
+    sleep_number: '45',
+    heartrate: '61.29',
+    breathrate: '15.3',
+    bedtime: '10:36 PM',
+    waketime: '7:09 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NC',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.27',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '62.1',
+    breathrate: '15.34',
+    bedtime: '10:42 PM',
+    waketime: '7:13 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'SC',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.9',
+    restful_time: '6h 35m',
+    sleep_number: '35',
+    heartrate: '62.08',
+    breathrate: '15.35',
+    bedtime: '10:44 PM',
+    waketime: '7:15 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'AR',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.02',
+    restful_time: '6h 37m',
+    sleep_number: '35',
+    heartrate: '62.14',
+    breathrate: '15.39',
+    bedtime: '10:21 PM',
+    waketime: '6:58 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'ID',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.31',
+    restful_time: '6h 42m',
+    sleep_number: '40',
+    heartrate: '61.88',
+    breathrate: '15.44',
+    bedtime: '10:10 PM',
+    waketime: '6:50 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'CO',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '74.44',
+    restful_time: '6h 45m',
+    sleep_number: '35',
+    heartrate: '61.43',
+    breathrate: '15.56',
+    bedtime: '10:04 PM',
+    waketime: '6:44 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'KS',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.24',
+    restful_time: '6h 34m',
+    sleep_number: '35',
+    heartrate: '61.73',
+    breathrate: '15.34',
+    bedtime: '10:30 PM',
+    waketime: '7:00 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'KY',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.94',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '62.25',
+    breathrate: '15.4',
+    bedtime: '10:48 PM',
+    waketime: '7:20 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'TX',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.08',
+    restful_time: '6h 37m',
+    sleep_number: '35',
+    heartrate: '62.08',
+    breathrate: '15.35',
+    bedtime: '10:33 PM',
+    waketime: '7:10 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'AL',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.89',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '62.58',
+    breathrate: '15.37',
+    bedtime: '10:19 PM',
+    waketime: '6:52 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'HI',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '70.96',
+    restful_time: '6h 26m',
+    sleep_number: '35',
+    heartrate: '61.25',
+    breathrate: '15.32',
+    bedtime: '10:15 PM',
+    waketime: '6:48 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'IL',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.19',
+    restful_time: '6h 34m',
+    sleep_number: '45',
+    heartrate: '61.81',
+    breathrate: '15.4',
+    bedtime: '10:26 PM',
+    waketime: '6:58 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'OH',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.06',
+    restful_time: '6h 31m',
+    sleep_number: '35',
+    heartrate: '61.88',
+    breathrate: '15.44',
+    bedtime: '10:46 PM',
+    waketime: '7:13 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'ND',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.09',
+    restful_time: '6h 32m',
+    sleep_number: '35',
+    heartrate: '62.18',
+    breathrate: '15.48',
+    bedtime: '10:26 PM',
+    waketime: '6:55 AM',
+    pc_difft_sleepnumber: '78',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NV',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.77',
+    restful_time: '6h 40m',
+    sleep_number: '35',
+    heartrate: '61.67',
+    breathrate: '15.51',
+    bedtime: '10:09 PM',
+    waketime: '6:48 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'UT',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.56',
+    restful_time: '6h 41m',
+    sleep_number: '35',
+    heartrate: '61.44',
+    breathrate: '15.59',
+    bedtime: '10:17 PM',
+    waketime: '7:00 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'OR',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.8',
+    restful_time: '6h 40m',
+    sleep_number: '35',
+    heartrate: '61.8',
+    breathrate: '15.37',
+    bedtime: '10:20 PM',
+    waketime: '7:02 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'DE',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.24',
+    restful_time: '6h 37m',
+    sleep_number: '45',
+    heartrate: '62.04',
+    breathrate: '15.4',
+    bedtime: '10:46 PM',
+    waketime: '7:19 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'VT',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.97',
+    restful_time: '6h 35m',
+    sleep_number: '40',
+    heartrate: '60.82',
+    breathrate: '15.31',
+    bedtime: '10:20 PM',
+    waketime: '6:54 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NH',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.23',
+    restful_time: '6h 37m',
+    sleep_number: '45',
+    heartrate: '61.61',
+    breathrate: '15.41',
+    bedtime: '10:25 PM',
+    waketime: '6:57 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NJ',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.84',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '61.71',
+    breathrate: '15.42',
+    bedtime: '10:53 PM',
+    waketime: '7:27 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'RI',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.85',
+    restful_time: '6h 37m',
+    sleep_number: '45',
+    heartrate: '61.16',
+    breathrate: '15.17',
+    bedtime: '10:37 PM',
+    waketime: '7:10 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MI',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.63',
+    restful_time: '6h 30m',
+    sleep_number: '40',
+    heartrate: '61.72',
+    breathrate: '15.4',
+    bedtime: '10:50 PM',
+    waketime: '7:16 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NY',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.6',
+    restful_time: '6h 33m',
+    sleep_number: '35',
+    heartrate: '61.59',
+    breathrate: '15.43',
+    bedtime: '10:49 PM',
+    waketime: '7:22 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'SD',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.37',
+    restful_time: '6h 33m',
+    sleep_number: '35',
+    heartrate: '61.6',
+    breathrate: '15.48',
+    bedtime: '10:11 PM',
+    waketime: '6:39 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'CA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.46',
+    restful_time: '6h 39m',
+    sleep_number: '35',
+    heartrate: '61.46',
+    breathrate: '15.38',
+    bedtime: '10:25 PM',
+    waketime: '7:08 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'IA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.2',
+    restful_time: '6h 31m',
+    sleep_number: '35',
+    heartrate: '61.61',
+    breathrate: '15.4',
+    bedtime: '10:19 PM',
+    waketime: '6:45 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'FL',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.91',
+    restful_time: '6h 37m',
+    sleep_number: '35',
+    heartrate: '61.82',
+    breathrate: '15.35',
+    bedtime: '10:45 PM',
+    waketime: '7:20 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'WI',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.18',
+    restful_time: '6h 32m',
+    sleep_number: '45',
+    heartrate: '61.5',
+    breathrate: '15.37',
+    bedtime: '10:16 PM',
+    waketime: '6:43 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MT',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.02',
+    restful_time: '6h 40m',
+    sleep_number: '35',
+    heartrate: '61.86',
+    breathrate: '15.53',
+    bedtime: '10:08 PM',
+    waketime: '6:46 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'GA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.04',
+    restful_time: '6h 33m',
+    sleep_number: '35',
+    heartrate: '62.21',
+    breathrate: '15.39',
+    bedtime: '10:46 PM',
+    waketime: '7:16 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.13',
+    restful_time: '6h 37m',
+    sleep_number: '35',
+    heartrate: '61.5',
+    breathrate: '15.34',
+    bedtime: '10:42 PM',
+    waketime: '7:17 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'IN',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.8',
+    restful_time: '6h 29m',
+    sleep_number: '35',
+    heartrate: '62.05',
+    breathrate: '15.4',
+    bedtime: '10:37 PM',
+    waketime: '7:01 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MN',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.89',
+    restful_time: '6h 38m',
+    sleep_number: '35',
+    heartrate: '61.4',
+    breathrate: '15.37',
+    bedtime: '10:26 PM',
+    waketime: '7:01 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'NE',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.05',
+    restful_time: '6h 27m',
+    sleep_number: '35',
+    heartrate: '61.76',
+    breathrate: '15.47',
+    bedtime: '10:25 PM',
+    waketime: '6:46 AM',
+    pc_difft_sleepnumber: '82',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'PA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.35',
+    restful_time: '6h 32m',
+    sleep_number: '35',
+    heartrate: '61.62',
+    breathrate: '15.43',
+    bedtime: '10:41 PM',
+    waketime: '7:09 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'VA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '73.35',
+    restful_time: '6h 35m',
+    sleep_number: '45',
+    heartrate: '62.1',
+    breathrate: '15.35',
+    bedtime: '10:46 PM',
+    waketime: '7:17 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'LA',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.8',
+    restful_time: '6h 37m',
+    sleep_number: '45',
+    heartrate: '62.41',
+    breathrate: '15.41',
+    bedtime: '10:18 PM',
+    waketime: '6:56 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'OK',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.72',
+    restful_time: '6h 34m',
+    sleep_number: '35',
+    heartrate: '61.95',
+    breathrate: '15.38',
+    bedtime: '10:31 PM',
+    waketime: '7:03 AM',
+    pc_difft_sleepnumber: '81',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'DC',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.6',
+    restful_time: '6h 37m',
+    sleep_number: '45',
+    heartrate: '61.38',
+    breathrate: '15.33',
+    bedtime: '11:13 PM',
+    waketime: '7:54 AM',
+    pc_difft_sleepnumber: '77',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MD',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.66',
+    restful_time: '6h 34m',
+    sleep_number: '45',
+    heartrate: '61.99',
+    breathrate: '15.4',
+    bedtime: '10:50 PM',
+    waketime: '7:23 AM',
+    pc_difft_sleepnumber: '79',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'MO',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.96',
+    restful_time: '6h 35m',
+    sleep_number: '35',
+    heartrate: '62.02',
+    breathrate: '15.36',
+    bedtime: '10:28 PM',
+    waketime: '7:00 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  },
+  {
+    state_code: 'WV',
+    last_sleep_date: '2020-08-18',
+    sleep_iq: '72.01',
+    restful_time: '6h 30m',
+    sleep_number: '35',
+    heartrate: '62.35',
+    breathrate: '15.53',
+    bedtime: '10:44 PM',
+    waketime: '7:13 AM',
+    pc_difft_sleepnumber: '80',
+    snap_date: '2020-08-19'
+  }
+]</pre></div></div></div></div></body></html></body></html></body></html></body></html>
